@@ -1,6 +1,6 @@
-cookbook_file "10gen.repo" do
-  source "/etc/yum.repos.d/10gen.repo"
-end
+#cookbook_file "10gen.repo" do
+#  source "/etc/yum.repos.d/10gen.repo"
+#end
 
 %w{mongo-10gen}.each do |pkg|
   package pkg do
