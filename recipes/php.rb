@@ -1,7 +1,13 @@
-%w{php}.each do |pkg|
-  package pkg do
-    action :install
-  end
+filename = "php-5.3.22-1.el6_7.wing.x86_64.rpm"
+
+cookbook_file "/tmp/#{filename}" do
+  source "#{filename}"
+end
+
+package "php" do
+  action :install
+  provider Chef::Provider::Package::Rpm
+  source "/tmp/#{filename}"
 end
  
 service "httpd" do
